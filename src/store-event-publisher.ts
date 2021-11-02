@@ -24,6 +24,9 @@ export class StoreEventPublisher {
     object.publish = (event: IEvent) => {
       eventBus.publish(event);
     };
+    object.publishAll = (events: IEvent[]) => {
+      events.forEach(event => eventBus.publish(event));
+    };
     return object;
   }
 }
